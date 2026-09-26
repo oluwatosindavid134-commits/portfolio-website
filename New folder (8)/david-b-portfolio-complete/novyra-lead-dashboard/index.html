@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novyra Lead Intelligence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">N</span><span>NOVYRA</span></div>
+      <nav>
+        <a class="nav-item active" href="#dashboard">⌂ <span>Dashboard</span></a>
+        <a class="nav-item" href="#leads">◫ <span>Lead Pipeline</span></a>
+        <a class="nav-item" href="#analytics">◔ <span>Analytics</span></a>
+        <a class="nav-item" href="#outreach">✉ <span>Outreach</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-card">
+          <div class="mini-icon">✦</div>
+          <div><strong>Lead Engine</strong><small>Intelligence workspace</small></div>
+        </div>
+        <div class="profile"><div class="avatar">DB</div><div><strong>David B.</strong><small>Workspace owner</small></div></div>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">LEAD INTELLIGENCE</p>
+          <h1>Good morning, David.</h1>
+          <p class="subtitle">Here’s what’s happening across your prospect pipeline today.</p>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" title="Notifications">◌</button>
+          <button class="primary" id="addLeadBtn">+ Add lead</button>
+        </div>
+      </header>
+
+      <section class="stats" id="dashboard">
+        <article class="stat-card"><div class="stat-top"><span>Prospects</span><b>↗ 12%</b></div><strong id="prospectCount">24</strong><p>Businesses in pipeline</p><div class="bar"><i style="width:78%"></i></div></article>
+        <article class="stat-card"><div class="stat-top"><span>High opportunity</span><b>↗ 8%</b></div><strong id="highCount">8</strong><p>Priority prospects</p><div class="bar"><i style="width:62%"></i></div></article>
+        <article class="stat-card"><div class="stat-top"><span>Contacted</span><b>↗ 18%</b></div><strong id="contactedCount">13</strong><p>Outreach sent</p><div class="bar"><i style="width:54%"></i></div></article>
+        <article class="stat-card accent-card"><div class="stat-top"><span>Pipeline value</span><b>↗ 24%</b></div><strong>$3,450</strong><p>Estimated opportunity</p><div class="bar"><i style="width:70%"></i></div></article>
+      </section>
+
+      <section class="overview" id="analytics">
+        <div class="panel chart-panel">
+          <div class="panel-head"><div><h2>Pipeline activity</h2><p>Lead activity over the last 7 days</p></div><select><option>This week</option><option>This month</option></select></div>
+          <div class="chart-wrap">
+            <div class="y-labels"><span>30</span><span>20</span><span>10</span><span>0</span></div>
+            <div class="chart"><div class="grid"></div><svg viewBox="0 0 700 240" preserveAspectRatio="none" aria-label="activity chart"><polyline points="0,190 100,150 200,175 300,105 400,125 500,65 600,90 700,28" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="700" cy="28" r="7"/></svg><div class="x-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+          </div>
+        </div>
+        <div class="panel opportunity">
+          <div class="panel-head"><div><h2>Opportunity mix</h2><p>Based on lead scores</p></div><button class="text-btn">View report →</button></div>
+          <div class="donut-row"><div class="donut"><div><strong>24</strong><span>Leads</span></div></div><div class="legend"><p><i class="dot hot"></i> High <strong>8</strong></p><p><i class="dot warm"></i> Medium <strong>10</strong></p><p><i class="dot cool"></i> Low <strong>6</strong></p></div></div>
+        </div>
+      </section>
+
+      <section class="leads-section" id="leads">
+        <div class="section-head">
+          <div><p class="eyebrow">PROSPECT PIPELINE</p><h2>Best opportunities first</h2></div>
+          <div class="filters"><input id="searchInput" placeholder="Search businesses..." /><select id="scoreFilter"><option value="all">All scores</option><option value="high">High opportunity</option><option value="medium">Medium opportunity</option><option value="low">Low opportunity</option></select></div>
+        </div>
+
+        <div class="panel table-panel">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Business</th><th>Category</th><th>Location</th><th>Lead score</th><th>Opportunity</th><th>Outreach</th><th></th></tr></thead>
+              <tbody id="leadTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom-grid" id="outreach">
+        <div class="panel">
+          <div class="panel-head"><div><h2>Outreach queue</h2><p>Next prospects ready for contact</p></div><button class="text-btn">Open queue →</button></div>
+          <div class="queue">
+            <div><span class="queue-num">01</span><div><strong>BrightSmile Dental</strong><small>AI receptionist opportunity</small></div><button class="send-btn">Send</button></div>
+            <div><span class="queue-num">02</span><div><strong>Oakline Family Dental</strong><small>Website redesign opportunity</small></div><button class="send-btn">Send</button></div>
+            <div><span class="queue-num">03</span><div><strong>Peak Fitness Studio</strong><small>Lead capture opportunity</small></div><button class="send-btn">Send</button></div>
+          </div>
+        </div>
+        <div class="panel insight-card">
+          <p class="eyebrow">AI INSIGHT</p>
+          <h2>Focus on businesses with high call volume.</h2>
+          <p>Dental clinics and service businesses with appointment-heavy workflows are showing the strongest potential for an AI receptionist pitch.</p>
+          <button class="primary wide">Explore recommendations →</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="leadModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <p class="eyebrow">NEW PROSPECT</p><h2>Add a lead</h2>
+      <form id="leadForm">
+        <label>Business name<input required name="business" placeholder="e.g. Nova Dental" /></label>
+        <label>Category<input required name="category" placeholder="e.g. Dental clinic" /></label>
+        <label>Location<input required name="location" placeholder="e.g. Houston, TX" /></label>
+        <label>Lead score<input required name="score" type="number" min="0" max="100" value="80" /></label>
+        <button class="primary wide" type="submit">Add to pipeline</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
